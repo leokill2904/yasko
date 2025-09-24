@@ -1,0 +1,70 @@
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: url("images/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+  }
+  
+  /* Шапка */
+  header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+  }
+  header .logo {
+    height: 80px;
+    vertical-align: middle;
+  }
+  header h1 {
+    margin: 10px 0 0;
+    font-size: 28px;
+  }
+  
+  /* Категорії */
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+  }
+  .categories button {
+    background: hwb(59 0% 0%);
+    border: none;
+    margin: 8px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+  .categories button img {
+    height: 24px;
+    margin-right: 8px;
+  }
+  .categories button:hover {
+    background: #35880e;
+  }
+  
+  /* Карточки пісень */
+  .song-card {
+    background: rgba(5, 105, 10, 0.6);
+    border-radius: 10px;
+    margin: 15px auto;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  }
+  .song-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  /* Футер */
+  footer {
+    background: rgba(0,0,0,0.7);
+    padding: 15px;
+    margin-top: 30px;
+  }

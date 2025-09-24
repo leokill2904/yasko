@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЯСКО 2017 – Музика для команди</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="ЯСКО Лого" class="logo">
+    <h1>🎵 ЯСКО-2017 – Музика для команди</h1>
+  </header>
+
+  <nav class="categories">
+    <button onclick="showCategory('warmup')">
+      <img src="images/icons/warmup.png" alt=""> Розминка
+    </button>
+    <button onclick="showCategory('goals')">
+      <img src="images/icons/goal.png" alt=""> Для голів
+    </button>
+        <button onclick="showCategory('halftime')">
+      <img src="images/icons/halftime.png" alt=""> Після гри
+    </button>
+    <button onclick="showCategory('anthem')">
+      <img src="images/icons/anthem.png" alt=""> Гімн
+    </button>
+    <button onclick="showCategory('players')">
+        <img src="images/icons/players.png" alt=""> Футболісти
+      </button>
+  </nav>
+
+  <main id="music-list">
+    <p>Оберіть категорію, щоб побачити треки.</p>
+  </main>
+
+  <footer>
+    <p>© 2025 ЯСКО-2017. Сила в єдності! І нас усіх об'єднує футбол! ⚽</p>
+  </footer>
+
+  <script>
+    const songs = {
+      warmup: [
+        { title: "Вибух на полі", file: "music/warmup1.mp3" },
+        { title: "Рухаймось далі", file: "music/warmup2.mp3" },
+        { title: "Кожен пас на полі", file: "music/warmup3.mp3" },
+        { title: "Розігрій поле, ЯСКО", file: "music/warmup4.mp3" },
+        { title: "ЯСКО-Чемпіони", file: "music/warmup5.mp3" }
+      ],
+      goals: [
+        { title: "ЯСКО-ГОЛ!", file: "music/goal1.mp3" },
+        { title: "НАм потрібен гоооол...", file: "music/goal2.mp3" }
+      ],
+      halftime: [
+        { title: "Ой на полі...", file: "music/halftime1.mp3" }
+      ],
+      anthem: [
+        { title: "Хто ми - ЯСКО!", file: "music/anthem.mp3" }
+      ],
+      players: [
+        { title: "Усі-реп-v1", file: "music/players/players.mp3" },
+        { title: "Усі-реп-v2", file: "music/players/players2.mp3" },
+        { title: "№1", file: "music/players/№1.mp3" },
+        { title: "№6", file: "music/players/№6.mp3" },
+        { title: "№7", file: "music/players/№7.mp3" },
+        { title: "№8", file: "music/players/№8.mp3" },
+        { title: "№10", file: "music/players/№10.mp3" },
+        { title: "№11", file: "music/players/№11.mp3" },
+        { title: "№12", file: "music/players/№12.mp3" },
+        { title: "№27", file: "music/players/№27.mp3" },
+        { title: "№30", file: "music/players/№30.mp3" },
+        { title: "№36", file: "music/players/№36.mp3" },
+        { title: "№55", file: "music/players/№55.mp3" },
+        { title: "№70", file: "music/players/№70.mp3" },
+        { title: "№72", file: "music/players/№72.mp3" }
+      ]
+    };
+
+    function showCategory(category) {
+      const list = document.getElementById("music-list");
+      list.innerHTML = "";
+      if (songs[category]) {
+        songs[category].forEach(song => {
+          const div = document.createElement("div");
+          div.className = "song-card";
+          div.innerHTML = `
+            <h3>${song.title}</h3>
+            <audio controls>
+              <source src="${song.file}" type="audio/mpeg">
+              Ваш браузер не підтримує аудіо.
+            </audio>
+          `;
+          list.appendChild(div);
+        });
+      } else {
+        list.innerHTML = "<p>У цій категорії ще немає пісень.</p>";
+      }
+    }
+  </script>
+</body>
+</html>
